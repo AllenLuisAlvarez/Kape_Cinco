@@ -1020,28 +1020,88 @@ document.addEventListener("DOMContentLoaded", async function () {
         
         switch (timeframe) {
             case 'weekly':
-                //for (i = 1; i>=4; i++){
+                    
+                    weekly.forEach(week => {
+                        weeks = ((week - 1) % 4 + 1) % 4 + 1;
 
-                // Populate weekly sales into the correct week index
-                weekly.forEach((item) => {
-                    week_number = (item.day - 1) / 7 + 1;
+                        if(weeks == 1){
+                            chartData = {
+                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                                datasets: [
+            
+                                    {
+                                        label: 'Sales',
+                                        data: [week.weekly_sale, 0, 0, 0],
+                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                        borderColor: 'rgba(54, 162, 235, 1)',
+                                        borderWidth: 1
+                                    }
+                                ]
+                            };
+        
+                        } else if (week == 2) {
+                            chartData = {
+                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                                datasets: [
+            
+                                    {
+                                        label: 'Sales',
+                                        data: [0, week.weekly_sale, 0, 0],
+                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                        borderColor: 'rgba(54, 162, 235, 1)',
+                                        borderWidth: 1
+                                    }
+                                ]
+                            };
+        
+                        } else if (week == 3) {
+                            chartData = {
+                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                                datasets: [
+            
+                                    {
+                                        label: 'Sales',
+                                        data: [0, 0, week.weekly_sale, 0],
+                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                        borderColor: 'rgba(54, 162, 235, 1)',
+                                        borderWidth: 1
+                                    }
+                                ]
+                            };
+        
+                        } else if (week == 4) {
+                            chartData = {
+                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                                datasets: [
+            
+                                    {
+                                        label: 'Sales',
+                                        data: [0, 0, 0, week.weekly_sale],
+                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                        borderColor: 'rgba(54, 162, 235, 1)',
+                                        borderWidth: 1
+                                    }
+                                ]
+                            };
 
-                });
+                        } else {
+                            chartData = {
+                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                                datasets: [
+            
+                                    {
+                                        label: 'Sales',
+                                        data: weekly,
+                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                        borderColor: 'rgba(54, 162, 235, 1)',
+                                        borderWidth: 1
+                                    }
+                                ]
+                            };
+                        }
+                    });
 
-                    chartData = {
-                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                        datasets: [
-    
-                            {
-                                label: 'Sales',
-                                data: [0,0,0,weekly],
-                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                borderColor: 'rgba(54, 162, 235, 1)',
-                                borderWidth: 1
-                            }
-                        ]
-                    };
-                //}
+                    
                 break;
                 case 'monthly':
                     chartData = {
