@@ -1039,7 +1039,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 ]
                             };
         
-                        } else if (week == 2) {
+                        } else if (weeks == 2) {
                             chartData = {
                                 labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
                                 datasets: [
@@ -1054,7 +1054,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 ]
                             };
         
-                        } else if (week == 3) {
+                        } else if (weeks == 3) {
                             chartData = {
                                 labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
                                 datasets: [
@@ -1069,7 +1069,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 ]
                             };
         
-                        } else if (week == 4) {
+                        } else if (weeks == 4) {
                             chartData = {
                                 labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
                                 datasets: [
