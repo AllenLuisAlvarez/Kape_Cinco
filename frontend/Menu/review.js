@@ -95,5 +95,5 @@ function generateOrderNumber() {
 }
 
 function generateOrderToken() {
-    return 'ORDT-' + Math.random().toString(36).substr(2, 16); 
+    return `ORDT- ${tableNum.value}- + ${Math.random().toString(36).substr(2, 16)}`; 
 }
