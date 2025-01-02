@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const receivedAmount = 0;
         const orderStats = '';
 
+        console.log(orderToken);
+
         const orderDetails = { orderNumber, token: orderToken, orderDate: new Date().toISOString() }; 
 
         localStorage.setItem(orderToken, JSON.stringify(orderDetails));
