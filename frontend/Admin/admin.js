@@ -1085,7 +1085,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                             };
 
                         } else {
-                            chartData = {
+                            /*chartData = {
                                 labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
                                 datasets: [
             
@@ -1097,7 +1097,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         borderWidth: 1
                                     }
                                 ]
-                            };
+                            };*/
+                            console.log('hehe');
                         }
                     });
 
