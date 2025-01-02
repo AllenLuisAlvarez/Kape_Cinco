@@ -719,8 +719,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     // Generate a random order number
     function generateOrderNumber() {
-        const tableNum = document.getElementById('order_table_input');
-        return `ORD-${tableNum.value}-${Math.floor(Math.random() * 1000000)}`;
+        return `ORD--${Math.floor(Math.random() * 1000000)}`;
     }
 
     // Display order details in the modal
@@ -730,10 +729,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         const orderDetailsElement = document.querySelector('#order-details');
         const modalTotalAmountElement = document.querySelector('#modal-total-amount');
         const totalAmountElement = document.querySelector('#total-amount'); 
-        const orderNumberElement = document.querySelector('#manual-order-number');
-        
-        orderNumberElement.textContent = `Order Number: ${generateOrderNumber()}`;
-        const orderNumber = orderNumberElement.textContent.replace('Order Number:', '').trim();
+
+    
 
         orderDetailsElement.innerHTML = '';
 
@@ -769,7 +766,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
         const ManualOrderDetails = {
-            orderNumber: orderNumber,
             totalPrice: totalPrice,
             cart: cartItems
         };
@@ -803,10 +799,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     
     // Event listener for the Confirm Order button in the modal
     confirmOrderButton.addEventListener('click', () => {
+        const tableNum = document.querySelector('#order_table_input');
         const orderDetails = JSON.parse(localStorage.getItem('ManualOrderDetails'));
         const pendingTotalAmountElement = document.querySelector('#modal-total-amount');
         const totalAmount = parseFloat(pendingTotalAmountElement.textContent.replace('₱', '').replace(',','').trim());
         const receivedAmount = document.getElementById('received-amount').value;
+        const orderNum =  `ORD-${tableNum}-${Math.floor(Math.random() * 1000000)}`;
         const orderStats = 'Ongoing';
 
         if (!orderDetails.orderNumber) {
@@ -818,7 +816,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             alert('Please enter a valid amount');
         } else {
             const formData = new FormData();
-            formData.append('order-number', orderDetails.orderNumber);
+            formData.append('order-number', orderNum);
             formData.append('total-amount', orderDetails.totalPrice);
             formData.append('received-amount', receivedAmount);
             formData.append('order-stats', orderStats);
