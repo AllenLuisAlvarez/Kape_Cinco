@@ -19,7 +19,10 @@
 
     if ($res->num_rows > 0) {
         while ($row = $res->fetch_assoc()) {
-            $allData[] = $row['weekly_sales'];
+            $allData[] = [
+                'weekly' => $row['weekly'],
+                'weekly_sales' => $row['weekly_sales']
+            ];
         }
     }
 
