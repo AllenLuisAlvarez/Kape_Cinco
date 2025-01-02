@@ -1026,11 +1026,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 // Populate weekly sales into the correct week index
                 weekly.forEach((item) => {
-                    if (item.weekly >= 1 && item.weekly <= 4) {
-                        weeklySalesData[item.weekly - 1] = item.weekly_sales; // -1 because arrays are 0-indexed
+                    if (item.day >= 1 && item.day <= 4) {
+                        weeklySalesData[item.day - 1] = item.weekly_sales; // -1 because arrays are 0-indexed
                     }
                 });
-                
+
                     chartData = {
                         labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
                         datasets: [
