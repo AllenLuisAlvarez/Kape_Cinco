@@ -7,8 +7,8 @@
        SUM(order_total_amount) AS weekly_sales 
        FROM order_number_table 
        WHERE order_status = 'Completed' 
-       AND EXTRACT(MONTH FROM order_date) = MONTH('2024-12-18')
-       AND EXTRACT(YEAR FROM order_date) = YEAR('2024-12-18')
+       AND EXTRACT(MONTH FROM order_date) = MONTH('2023-12-21')
+       AND EXTRACT(YEAR FROM order_date) = YEAR('2023-12-21')
        GROUP BY weekly
        ORDER BY weekly ASC";
 
