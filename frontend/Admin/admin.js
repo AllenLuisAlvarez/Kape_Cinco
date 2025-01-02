@@ -1020,7 +1020,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         
         switch (timeframe) {
             case 'weekly':
-                    if (weeklyy.length >= 4) {
+                    if (weeklyy.length == 4 || weeklyy == 3 || weeklyy == 2) {
                         chartData = {
                             labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
                             datasets: [
