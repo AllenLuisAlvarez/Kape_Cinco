@@ -1020,89 +1020,91 @@ document.addEventListener("DOMContentLoaded", async function () {
         
         switch (timeframe) {
             case 'weekly':
+                    if (weeklyy.length >= 4) {
+                        chartData = {
+                            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                            datasets: [
+        
+                                {
+                                    label: 'Sales',
+                                    data: weeklyy.weekly_sales,
+                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                    borderColor: 'rgba(54, 162, 235, 1)',
+                                    borderWidth: 1
+                                }
+                            ]
+                        };
+
+                    } else {
+                        weeklyy.forEach(item => {
+                            numberOfweek = parseInt(item.weekly)
+                            weeks = Math.ceil(((numberOfweek - 1) / 4 + 1) % 4 + 1);
+                            console.log(weeks);
+    
+                            if(weeks == 1){
+                                chartData = {
+                                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                                    datasets: [
+                
+                                        {
+                                            label: 'Sales',
+                                            data: [item.weekly_sales, 0, 0, 0],
+                                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                            borderColor: 'rgba(54, 162, 235, 1)',
+                                            borderWidth: 1
+                                        }
+                                    ]
+                                };
+            
+                            } else if (weeks == 2) {
+                                chartData = {
+                                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                                    datasets: [
+                
+                                        {
+                                            label: 'Sales',
+                                            data: [0, item.weekly_sales, 0, 0],
+                                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                            borderColor: 'rgba(54, 162, 235, 1)',
+                                            borderWidth: 1
+                                        }
+                                    ]
+                                };
+            
+                            } else if (weeks == 3) {
+                                chartData = {
+                                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                                    datasets: [
+                
+                                        {
+                                            label: 'Sales',
+                                            data: [0, 0, item.weekly_sales, 0],
+                                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                            borderColor: 'rgba(54, 162, 235, 1)',
+                                            borderWidth: 1
+                                        }
+                                    ]
+                                };
+            
+                            } else {
+                                chartData = {
+                                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                                    datasets: [
+                
+                                        {
+                                            label: 'Sales',
+                                            data: [0, 0, 0, item.weekly_sales],
+                                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                            borderColor: 'rgba(54, 162, 235, 1)',
+                                            borderWidth: 1
+                                        }
+                                    ]
+                                };
+    
+                            } 
+    
+                    })};
                     
-                    weeklyy.forEach(item => {
-                        numberOfweek = parseInt(item.weekly)
-                        weeks = Math.ceil(((numberOfweek - 1) / 4 + 1) % 4 + 1);
-                        console.log(weeks);
-
-                        if(weeks == 1){
-                            chartData = {
-                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                                datasets: [
-            
-                                    {
-                                        label: 'Sales',
-                                        data: [item.weekly_sales, 0, 0, 0],
-                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                        borderColor: 'rgba(54, 162, 235, 1)',
-                                        borderWidth: 1
-                                    }
-                                ]
-                            };
-        
-                        } else if (weeks == 2) {
-                            chartData = {
-                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                                datasets: [
-            
-                                    {
-                                        label: 'Sales',
-                                        data: [0, item.weekly_sales, 0, 0],
-                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                        borderColor: 'rgba(54, 162, 235, 1)',
-                                        borderWidth: 1
-                                    }
-                                ]
-                            };
-        
-                        } else if (weeks == 3) {
-                            chartData = {
-                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                                datasets: [
-            
-                                    {
-                                        label: 'Sales',
-                                        data: [0, 0, item.weekly_sales, 0],
-                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                        borderColor: 'rgba(54, 162, 235, 1)',
-                                        borderWidth: 1
-                                    }
-                                ]
-                            };
-        
-                        } else if (weeks == 4) {
-                            chartData = {
-                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                                datasets: [
-            
-                                    {
-                                        label: 'Sales',
-                                        data: [0, 0, 0, item.weekly_sales],
-                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                        borderColor: 'rgba(54, 162, 235, 1)',
-                                        borderWidth: 1
-                                    }
-                                ]
-                            };
-
-                        } else {
-                            chartData = {
-                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                                datasets: [
-            
-                                    {
-                                        label: 'Sales',
-                                        data: item.weekly_sales,
-                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                        borderColor: 'rgba(54, 162, 235, 1)',
-                                        borderWidth: 1
-                                    }
-                                ]
-                            };
-                        }
-                    });
-
                     
                 break;
                 case 'monthly':
