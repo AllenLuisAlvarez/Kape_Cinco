@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const orderListContainer = document.getElementById('order-list');
     const summaryContainer = document.getElementById('summary');
+    const tableNum = document.getElementById('order_table_input');
 
     if (cart.length === 0) {
         window.location.href = '/frontend/Menu/menu.html';
@@ -90,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function generateOrderNumber() {
-    return `ORD-${Math.floor(Math.random() * 1000000)}`;
+    return `ORD-${tableNum.value}-${Math.floor(Math.random() * 1000000)}`;
 }
 
 function generateOrderToken() {
