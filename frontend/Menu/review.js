@@ -57,8 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const receivedAmount = 0;
         const orderStats = '';
 
-        console.log(orderToken);
-
         const orderDetails = { orderNumber, token: orderToken, orderDate: new Date().toISOString() }; 
 
         localStorage.setItem(orderToken, JSON.stringify(orderDetails));
@@ -80,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Order Confirmed');
                 localStorage.removeItem('cart');
                 console.log(cart);
-                //window.location.href = `/frontend/Menu/QRpage.html?order=${orderToken}`;
+                window.location.href = `/frontend/Menu/QRpage.html?order=${orderToken}`;
             } else if (data.error) {
                 alert(data.error);
             }
@@ -94,12 +92,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function generateOrderNumber() {
     const tableNum = document.getElementById('order_table_input');
-
     return `ORD-${tableNum.value}-${Math.floor(Math.random() * 1000000)}`;
 }
 
 function generateOrderToken() {
-    const tableNum = document.getElementById('order_table_input');
-
-    return 'ORD-' + tableNum.value ,'-' +Math.random().toString(36).substr(2, 16); 
+    return 'ORDT-' + Math.random().toString(36).substr(2, 16); 
 }
