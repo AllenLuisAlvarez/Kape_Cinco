@@ -3,13 +3,13 @@
     include "../server.php";
 
     $weeklyStats = "SELECT 
-       WEEK(order_date) AS weekly,
+       DAY(order_date) AS day,
        SUM(order_total_amount) AS weekly_sales 
        FROM order_number_table 
        WHERE order_status = 'Completed' 
-       AND EXTRACT(MONTH FROM order_date) = MONTH('2023-11-21')
-       GROUP BY weekly
-       ORDER BY weekly ASC";
+       AND EXTRACT(MONTH FROM order_date) = MONTH('2024-12-16')
+       GROUP BY day
+       ORDER BY day ASC;";
 
 
     $res = $conn->query($weeklyStats);
