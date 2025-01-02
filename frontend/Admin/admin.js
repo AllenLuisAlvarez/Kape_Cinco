@@ -1024,7 +1024,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     weeklyy.forEach(item => {
                         numberOfweek = parseInt(item.weekly)
                         weeks = ((numberOfweek - 1) % 4 + 1) % 4 + 1;
-
+                        console.log(weeks);
 
                         if(weeks == 1){
                             chartData = {
