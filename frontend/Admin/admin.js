@@ -1021,8 +1021,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         switch (timeframe) {
             case 'weekly':
                     
-                    weeklyy.forEach(week => {
-                        numberOfweek = parseInt(week.weekly)
+                    weeklyy.forEach(item => {
+                        numberOfweek = parseInt(item.weekly)
                         weeks = ((numberOfweek - 1) / 4 + 1) / 4 + 1;
 
 
@@ -1100,7 +1100,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                     }
                                 ]
                             };*/
-                            console.log(weeks, numberOfweek);
+                            console.log(typeof item.weekly);
                         }
                     });
 
