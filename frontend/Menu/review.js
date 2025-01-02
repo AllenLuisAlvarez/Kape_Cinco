@@ -99,5 +99,5 @@ function generateOrderNumber() {
 function generateOrderToken() {
     const tableNum = document.getElementById('order_table_input');
 
-    return `ORD-${tableNum.value}-${Math.random().toString(36).substr(2, 16)}`; 
+    return 'ORD-' + tableNum.value ,'-' +Math.random().toString(36).substr(2, 16); 
 }
