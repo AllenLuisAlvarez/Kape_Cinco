@@ -1034,7 +1034,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     
                             {
                                 label: 'Sales',
-                                data: weekly[week_number],
+                                data: [0,0,0,weekly],
                                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                 borderColor: 'rgba(54, 162, 235, 1)',
                                 borderWidth: 1
