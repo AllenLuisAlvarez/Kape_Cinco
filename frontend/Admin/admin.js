@@ -1022,7 +1022,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             case 'weekly':
                     
                     weekly.forEach(week => {
-                        weeks = ((week - 1) % 4 + 1) % 4 + 1;
+                        weeks = ((week - 1) / 4 + 1) / 4 + 1;
 
                         if(weeks == 1){
                             chartData = {
