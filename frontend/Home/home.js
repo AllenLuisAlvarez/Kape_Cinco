@@ -719,7 +719,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     // Generate a random order number
     function generateOrderNumber() {
-        return `ORD-${Math.floor(Math.random() * 1000000)}`;
+        const tableNum = document.getElementById('order_table_input');
+        return `ORD-${tableNum.value}-${Math.floor(Math.random() * 1000000)}`;
     }
 
     // Display order details in the modal
