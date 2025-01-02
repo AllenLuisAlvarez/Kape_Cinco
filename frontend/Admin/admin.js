@@ -1024,6 +1024,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     weekly.forEach(week => {
                         weeks = ((week.weekly - 1) / 4 + 1) / 4 + 1;
 
+
                         if(weeks == 1){
                             chartData = {
                                 labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
@@ -1098,7 +1099,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                     }
                                 ]
                             };*/
-                            console.log('hehe');
+                            console.log(weeks);
                         }
                     });
 
