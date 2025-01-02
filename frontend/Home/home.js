@@ -802,11 +802,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         const orderNum =  `ORD-${tableNum.value}-${Math.floor(Math.random() * 1000000)}`;
         const orderStats = 'Ongoing';
 
-        if (!orderDetails.orderNumber) {
-            alert('No order details found!');
-            return;
-        }
-
         if (isNaN(receivedAmount) || receivedAmount <= 0 || receivedAmount < totalAmount) {
             alert('Please enter a valid amount');
         } else {
