@@ -1027,7 +1027,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 // Populate weekly sales into the correct week index
                 weekly.forEach((item) => {
                     if (item.day >= 1 && item.day <= 4) {
-                        weeklySalesData[item.day - 1] = item.weekly_sales; // -1 because arrays are 0-indexed
+                        weeklySalesData[item.day - 4] = item.weekly_sales; // -1 because arrays are 0-indexed
                     }
                 });
 
