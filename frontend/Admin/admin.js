@@ -1022,13 +1022,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             case 'weekly':
                 //for (i = 1; i>=4; i++){
 
-                const weeklySalesData = Array(4).fill(null);
-
                 // Populate weekly sales into the correct week index
                 weekly.forEach((item) => {
-                    if (item.day >= 1 && item.day <= 4) {
-                        weeklySalesData[item.day - 4] = item.weekly_sales; // -1 because arrays are 0-indexed
-                    }
+                    week_number = (item.day - 1) / 7 + 1;
+
                 });
 
                     chartData = {
@@ -1037,7 +1034,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     
                             {
                                 label: 'Sales',
-                                data: weeklySalesData,
+                                data: weekly[week_number].weekly_sales,
                                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                 borderColor: 'rgba(54, 162, 235, 1)',
                                 borderWidth: 1
