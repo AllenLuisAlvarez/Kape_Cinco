@@ -1011,7 +1011,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     async function generateStatisticsChart(timeframe = 'weekly') {
         let chartData = {};
-        const weekly = await weeklySales();
+        const weeklyy = await weeklySales();
         const monthly = await monthlySales();
         const yearly = await yearlySales();
         const YD = await yearlySalesDate();
@@ -1021,8 +1021,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         switch (timeframe) {
             case 'weekly':
                     
-                    weekly.forEach(week => {
-                        weeks = ((week - 1) / 4 + 1) / 4 + 1;
+                    weeklyy.forEach(week => {
+                        weeks = ((week.weekly - 1) / 4 + 1) / 4 + 1;
 
 
                         if(weeks == 1){
