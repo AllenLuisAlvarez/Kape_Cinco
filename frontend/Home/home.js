@@ -717,11 +717,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     /*------------------------------------- END OF ADD TO CART FUNCTIONS -------------------------------*/
 
-    // Generate a random order number
-    function generateOrderNumber() {
-        return `ORD--${Math.floor(Math.random() * 1000000)}`;
-    }
-
     // Display order details in the modal
 
     function displayOrderDetails() {
@@ -799,12 +794,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     
     // Event listener for the Confirm Order button in the modal
     confirmOrderButton.addEventListener('click', () => {
-        const tableNum = document.querySelector('#order_table_input');
+        const tableNum = document.getElementById('order_table_input');
         const orderDetails = JSON.parse(localStorage.getItem('ManualOrderDetails'));
         const pendingTotalAmountElement = document.querySelector('#modal-total-amount');
         const totalAmount = parseFloat(pendingTotalAmountElement.textContent.replace('₱', '').replace(',','').trim());
         const receivedAmount = document.getElementById('received-amount').value;
-        const orderNum =  `ORD-${tableNum}-${Math.floor(Math.random() * 1000000)}`;
+        const orderNum =  `ORD-${tableNum.value}-${Math.floor(Math.random() * 1000000)}`;
         const orderStats = 'Ongoing';
 
         if (!orderDetails.orderNumber) {
