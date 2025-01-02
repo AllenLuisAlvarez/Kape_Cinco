@@ -1020,7 +1020,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         
         switch (timeframe) {
             case 'weekly':
-                console.log(weeklyy);
+                console.log(weeklyy.weekly_sales);
                     if (weeklyy.length == 4 || weeklyy.length == 3 || weeklyy.length == 2) {
                         chartData = {
                             labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
@@ -1028,7 +1028,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         
                                 {
                                     label: 'Sales',
-                                    data: weeklyy,
+                                    data: weeklyy.weekly_sales,
                                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                     borderColor: 'rgba(54, 162, 235, 1)',
                                     borderWidth: 1
