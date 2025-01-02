@@ -1100,7 +1100,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                     }
                                 ]
                             };*/
-                            console.log(typeof item.weekly);
+                            console.log(weeks);
                         }
                     });
 
