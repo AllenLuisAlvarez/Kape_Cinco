@@ -1022,7 +1022,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             case 'weekly':
                     
                     weeklyy.forEach(week => {
-                        weeks = ((week.weekly - 1) / 4 + 1) / 4 + 1;
+                        weeks = ((parseInt(week.weekly) - 1) / 4 + 1) / 4 + 1;
 
 
                         if(weeks == 1){
