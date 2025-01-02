@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Order Confirmed');
                 localStorage.removeItem('cart');
                 console.log(cart);
-                window.location.href = `/frontend/Menu/QRpage.html?order=${orderToken}`;
+                //window.location.href = `/frontend/Menu/QRpage.html?order=${orderToken}`;
             } else if (data.error) {
                 alert(data.error);
             }
