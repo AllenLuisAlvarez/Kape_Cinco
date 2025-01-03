@@ -1021,22 +1021,29 @@ document.addEventListener("DOMContentLoaded", async function () {
         switch (timeframe) {
             case 'weekly':
                 //console.log(weeklyy.weekly_sales);
-                    if (weeklyy.length == 4 || weeklyy.length == 3 || weeklyy.length == 2) {
+                    if (weeklyy.length > 1) {
+                        const weeklyCount = new Array(4).fill(0);
                         weeklyy.forEach(e => {
-                            chartData = {
-                                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-                                datasets: [
-            
-                                    {
-                                        label: 'Sales',
-                                        data: e.weekly_sales,
-                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                        borderColor: 'rgba(54, 162, 235, 1)',
-                                        borderWidth: 1
-                                    }
-                                ]
-                            };
+                            numberOfweek = parseInt(e.weekly)
+                            weeks = ((numberOfweek - 1) % 4 + 1) % 4 + 1;
+
+                            const weekIndex = weeks - 1;
+                            weeklyCount[weekIndex] = parseInt(e.weekly_sales);
                         })
+
+                        chartData = {
+                            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                            datasets: [
+        
+                                {
+                                    label: 'Sales',
+                                    data: weeklyCount,
+                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                    borderColor: 'rgba(54, 162, 235, 1)',
+                                    borderWidth: 1
+                                }
+                            ]
+                        };
 
                     } else {
                         weeklyy.forEach(item => {
