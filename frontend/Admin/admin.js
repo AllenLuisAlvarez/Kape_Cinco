@@ -1119,7 +1119,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                             const monthsCount  = new Array(12).fill(0);
                             monthIndex = i.monthly - 1;
                             monthsCount[monthIndex] = i.monthly_sales;
-
+                        })
                             console.log(monthsCount);
 
                             chartData = {
@@ -1139,7 +1139,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                       
                             
                             
-                        })
+                        
                         console.log(chartData);
                     } else {
                         monthlyy.forEach(i => {
