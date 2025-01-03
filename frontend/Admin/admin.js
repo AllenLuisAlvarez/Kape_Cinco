@@ -1115,27 +1115,26 @@ document.addEventListener("DOMContentLoaded", async function () {
                     if (monthlyy.length > 1 ) {
                         // check the first number of months to start then prompt it then fill the 0 of null data.
                         monthlyy.forEach((i, index) => {
+                          
+                            const monthsCount  = new Array(12).fill(0);
+                                
+                            monthsCount[index] = i.monthly[index];
+                            chartData = {
+                                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                                datasets: [
+            
+                                    {
+                                        label: 'Sales',
+                                        data: monthsCount,
+                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                        borderColor: 'rgba(54, 162, 235, 1)',
+                                        borderWidth: 1
+                                    }
+                                ]
+                            };
+                      
                             
-                            
-                                const monthsCount  = new Array(12).fill(0);
-                                if (index === i.monthly[index]) {
-                                    console.log(i.monthly);
-                                    monthsCount[index] = i.monthly[index];
-                                    chartData = {
-                                        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-                                            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                                        datasets: [
-                    
-                                            {
-                                                label: 'Sales',
-                                                data: monthsCount,
-                                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                                borderColor: 'rgba(54, 162, 235, 1)',
-                                                borderWidth: 1
-                                            }
-                                        ]
-                                    };
-                                } 
                             
                         })
                     } else {
