@@ -1153,7 +1153,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                         monthlyy.forEach(i => {
                             if (parseInt(i.monthly) === 1) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[0] = i.monthly_sales;
+                                monthsCount[0] = parseInt(i.monthly_sales);
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1170,7 +1170,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 };
                             } else if (parseInt(i.monthly) === 2) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[1] = i.monthly_sales;
+                                monthsCount[1] =parseInt(i.monthly_sales);
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1187,7 +1187,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 };
                             } else if (parseInt(i.monthly) === 3) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[2] = i.monthly_sales;
+                                monthsCount[2] = parseInt(i.monthly_sales);
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1204,7 +1204,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 };
                             } else if (parseInt(i.monthly) === 4) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[3] = i.monthly_sales;
+                                monthsCount[3] = parseInt(i.monthly_sales);
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1221,7 +1221,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 };
                             } else if (parseInt(i.monthly) === 5) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[4] = i.monthly_sales;
+                                monthsCount[4] = parseInt(i.monthly_sales);
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1238,7 +1238,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 };
                             } else if (parseInt(i.monthly) === 6) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[5] = i.monthly_sales;
+                                monthsCount[5] = parseInt(i.monthly_sales);
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1255,7 +1255,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 };
                             } else if (parseInt(i.monthly) === 7) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[6] = i.monthly_sales;
+                                monthsCount[6] = parseInt(i.monthly_sales);
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1272,7 +1272,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 };
                             } else if (parseInt(i.monthly) === 8) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[7] = i.monthly_sales;
+                                monthsCount[7] = parseInt(i.monthly_sales);
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1289,7 +1289,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 };
                             } else if (parseInt(i.monthly) === 9) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[8] = i.monthly_sales;
+                                monthsCount[8] = parseInt(i.monthly_sales);
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1306,7 +1306,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 };
                             } else if (parseInt(i.monthly) === 10) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[9] = i.monthly_sales;
+                                monthsCount[9] = parseInt(i.monthly_sales);
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1323,7 +1323,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 };
                             } else if (parseInt(i.monthly) === 11) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[10] = i.monthly_sales;
+                                monthsCount[10] = parseInt(i.monthly_sales);
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1340,7 +1340,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 };
                             } else if (parseInt(i.monthly) == 12) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[11] = i.monthly;
+                                monthsCount[11] = parseInt(i.monthly_sales);
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
