@@ -1118,7 +1118,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                             console.log(i.monthly);
                             
                                 const monthsCount  = new Array(12).fill(0);
-                                if (index === i.monthly[0]) {
+                                if (index === i.monthly[index]) {
                                     monthsCount[index] = i.monthly[index];
                                     chartData = {
                                         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
