@@ -1115,10 +1115,11 @@ document.addEventListener("DOMContentLoaded", async function () {
                     if (monthlyy.length > 1 ) {
                         // check the first number of months to start then prompt it then fill the 0 of null data.
                         monthlyy.forEach((i, index) => {
-                            console.log(i.monthly);
+                            
                             
                                 const monthsCount  = new Array(12).fill(0);
                                 if (index === i.monthly[index]) {
+                                    console.log(i.monthly);
                                     monthsCount[index] = i.monthly[index];
                                     chartData = {
                                         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
