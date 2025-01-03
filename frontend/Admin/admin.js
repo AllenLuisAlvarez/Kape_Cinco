@@ -1122,7 +1122,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                         if (typeof i.monthly_sales === 'number' && !isNaN(i.monthly_sales)) {
                             monthsCount[monthIndex] = i.monthly_sales; // Only assign valid numbers
                         }
-                        console.log(i.monthly_sales);
+                        console.log(typeof i.monthly_sales);
                         
                     });
                 
