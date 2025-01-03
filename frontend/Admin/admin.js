@@ -1112,34 +1112,34 @@ document.addEventListener("DOMContentLoaded", async function () {
                 case 'monthly':
                     
 
-                if (monthlyy.length > 1) {
-                    // Initialize an array of 12 zeros
-                    const monthsCount = new Array(12).fill(0);
-                    console.log(monthlyy);
-                  // Populate monthsCount with sales data
-                    monthlyy.forEach(i => {
-                        const monthIndex = i.monthly - 1; // Convert to 0-based index
-                        monthsCount[monthIndex] = parseInt(i.monthly_sales); // Only assign valid numbers
+                    if (monthlyy.length > 1) {
+                        // Initialize an array of 12 zeros
+                        const monthsCount = new Array(12).fill(0);
+                        console.log(monthlyy);
+                        // Populate monthsCount with sales data
+                        monthlyy.forEach(i => {
+                            const monthIndex = i.monthly - 1; // Convert to 0-based index
+                            monthsCount[monthIndex] = parseInt(i.monthly_sales); // Only assign valid numbers
                         
                         
-                    });
+                        });
                 
-                    console.log(monthsCount);// Output the resulting array
+                        console.log(monthsCount);// Output the resulting array
                 
-                    // Chart data
-                    const chartData = {
-                        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                        // Chart data
+                            chartData = {
+                            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                        datasets: [
-                            {
-                                label: 'Sales',
-                                data: monthsCount,
-                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                borderColor: 'rgba(54, 162, 235, 1)',
-                                borderWidth: 1
-                            }
-                        ]
-                    };
+                            datasets: [
+                                {
+                                    label: 'Sales',
+                                    data: monthsCount,
+                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                    borderColor: 'rgba(54, 162, 235, 1)',
+                                    borderWidth: 1
+                                }
+                            ]
+                        };
                 
                     } else {
                         monthlyy.forEach(i => {
