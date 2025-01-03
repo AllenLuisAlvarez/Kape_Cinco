@@ -7,7 +7,7 @@
        SUM(order_total_amount) AS monthly_sales 
        FROM order_number_table 
        WHERE order_status = 'Completed'
-       AND EXTRACT(YEAR FROM order_date) = YEAR(CONVERT_TZ(NOW(), @@session.time_zone, '+08:00')) 
+       AND EXTRACT(YEAR FROM order_date) = YEAR('2024-12-25 00:16:22') 
        GROUP BY monthly
        ORDER BY monthly ASC";
 
