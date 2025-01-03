@@ -1133,7 +1133,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                         
                         });
                 
-                        console.log(monthsCount);// Output the resulting array
                 
                         // Chart data
                             chartData = {
