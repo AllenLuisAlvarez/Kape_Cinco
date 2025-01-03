@@ -1115,6 +1115,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     if (monthlyy.length > 1 ) {
                         // check the first number of months to start then prompt it then fill the 0 of null data.
                         monthlyy.forEach((i, index) => {
+                            console.log(i.monthly[0]);
                             if (i.monthly[0] !== null) {
                                 const monthsCount  = new Array(12).fill(0);
                                 if (index === i.monthly[0]) {
