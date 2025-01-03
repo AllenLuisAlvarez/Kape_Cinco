@@ -7,7 +7,7 @@
        SUM(order_total_amount) AS monthly_sales 
        FROM order_number_table 
        WHERE order_status = 'Completed'
-       AND EXTRACT(YEAR FROM order_date) = YEAR('2024') 
+       AND EXTRACT(YEAR FROM order_date) = YEAR('2024-09-21 22:40:10') 
        GROUP BY monthly
        ORDER BY monthly ASC";
 
