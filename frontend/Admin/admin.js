@@ -1115,8 +1115,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 if (monthlyy.length > 1) {
                     // Initialize an array of 12 zeros
                     const monthsCount = new Array(12).fill(0);
-                
-                    // Populate monthsCount with sales data
+                    console.log(monthlyy);
+                  // Populate monthsCount with sales data
                     monthlyy.forEach(i => {
                         const monthIndex = i.monthly - 1; // Convert to 0-based index
                         if (typeof i.monthly_sales === 'number') {
