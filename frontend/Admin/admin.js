@@ -1043,6 +1043,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                             numberOfweek = parseInt(item.weekly)
                             weeks = Math.ceil(((numberOfweek - 1) / 4 + 1) / 4 + 1);
                             console.log(weeks);
+                            console.log(numberOfweek);
     
                             if(weeks == 1){
                                 chartData = {
