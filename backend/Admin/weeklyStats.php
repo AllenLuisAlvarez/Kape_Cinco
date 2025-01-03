@@ -7,8 +7,8 @@
        SUM(order_total_amount) AS weekly_sales 
        FROM order_number_table 
        WHERE order_status = 'Completed' 
-       AND EXTRACT(MONTH FROM order_date) = MONTH('2024-12-16')
-       AND EXTRACT(YEAR FROM order_date) = YEAR('2024-12-16')
+       AND EXTRACT(MONTH FROM order_date) = MONTH(CONVERT_TZ(NOW(), @@session.time_zone, '+08:00'))
+       AND EXTRACT(YEAR FROM order_date) = YEAR(CONVERT_TZ(NOW(), @@session.time_zone, '+08:00'))
        GROUP BY weekly
        ORDER BY weekly ASC";
 
