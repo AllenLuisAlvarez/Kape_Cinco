@@ -1142,9 +1142,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                         ]
                     };
                 
-                    console.log(chartData); // Output chart data
-                
-                
                     } /*else {
                         monthlyy.forEach(i => {
                             if (i.monthly[0] == 1) {
