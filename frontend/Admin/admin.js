@@ -1151,9 +1151,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                     } else {
                         monthlyy.forEach(i => {
-                            if (i.monthly[0] == 1) {
+                            if (parseInt(i.monthly) === 1) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[0] = i.monthly;
+                                monthsCount[0] = i.monthly_sales;
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1168,9 +1168,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         }
                                     ]
                                 };
-                            } else if (i.monthly[0] == 2) {
+                            } else if (parseInt(i.monthly) === 2) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[1] = i.monthly;
+                                monthsCount[1] = i.monthly_sales;
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1185,9 +1185,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         }
                                     ]
                                 };
-                            } else if (i.monthly[0] == 3) {
+                            } else if (parseInt(i.monthly) === 3) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[2] = i.monthly;
+                                monthsCount[2] = i.monthly_sales;
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1202,9 +1202,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         }
                                     ]
                                 };
-                            } else if (i.monthly[0] == 4) {
+                            } else if (parseInt(i.monthly) === 4) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[3] = i.monthly;
+                                monthsCount[3] = i.monthly_sales;
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1219,9 +1219,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         }
                                     ]
                                 };
-                            } else if (i.monthly[0] == 5) {
+                            } else if (parseInt(i.monthly) === 5) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[4] = i.monthly;
+                                monthsCount[4] = i.monthly_sales;
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1236,9 +1236,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         }
                                     ]
                                 };
-                            } else if (i.monthly[0] == 6) {
+                            } else if (parseInt(i.monthly) === 6) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[5] = i.monthly;
+                                monthsCount[5] = i.monthly_sales;
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1253,9 +1253,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         }
                                     ]
                                 };
-                            } else if (i.monthly[0] == 7) {
+                            } else if (parseInt(i.monthly) === 7) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[6] = i.monthly;
+                                monthsCount[6] = i.monthly_sales;
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1270,9 +1270,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         }
                                     ]
                                 };
-                            } else if (i.monthly[0] == 8) {
+                            } else if (parseInt(i.monthly) === 8) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[7] = i.monthly;
+                                monthsCount[7] = i.monthly_sales;
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1287,9 +1287,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         }
                                     ]
                                 };
-                            } else if (i.monthly[0] == 9) {
+                            } else if (parseInt(i.monthly) === 9) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[8] = i.monthly;
+                                monthsCount[8] = i.monthly_sales;
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1304,9 +1304,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         }
                                     ]
                                 };
-                            } else if (i.monthly[0] == 10) {
+                            } else if (parseInt(i.monthly) === 10) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[9] = i.monthly;
+                                monthsCount[9] = i.monthly_sales;
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1321,9 +1321,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         }
                                     ]
                                 };
-                            } else if (i.monthly[0] == 11) {
+                            } else if (parseInt(i.monthly) === 11) {
                                 const monthsCount  = new Array(12).fill(0);
-                                monthsCount[10] = i.monthly;
+                                monthsCount[10] = i.monthly_sales;
                                 chartData = {
                                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -1338,7 +1338,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                         }
                                     ]
                                 };
-                            } else if (i.monthly[0] == 12) {
+                            } else if (parseInt(i.monthly) == 12) {
                                 const monthsCount  = new Array(12).fill(0);
                                 monthsCount[11] = i.monthly;
                                 chartData = {
