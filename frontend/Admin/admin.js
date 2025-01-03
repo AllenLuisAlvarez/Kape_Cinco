@@ -1150,7 +1150,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                                         {
                                             label: 'Sales',
-                                            data: monthsData,
+                                            data: monthsCount,
                                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                             borderColor: 'rgba(54, 162, 235, 1)',
                                             borderWidth: 1
@@ -1167,7 +1167,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                                         {
                                             label: 'Sales',
-                                            data: monthsData,
+                                            data: monthsCount,
                                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                             borderColor: 'rgba(54, 162, 235, 1)',
                                             borderWidth: 1
@@ -1184,7 +1184,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                                         {
                                             label: 'Sales',
-                                            data: monthsData,
+                                            data: monthsCount,
                                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                             borderColor: 'rgba(54, 162, 235, 1)',
                                             borderWidth: 1
@@ -1201,7 +1201,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                                         {
                                             label: 'Sales',
-                                            data: monthsData,
+                                            data: monthsCount,
                                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                             borderColor: 'rgba(54, 162, 235, 1)',
                                             borderWidth: 1
@@ -1218,7 +1218,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                                         {
                                             label: 'Sales',
-                                            data: monthsData,
+                                            data: monthsCount,
                                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                             borderColor: 'rgba(54, 162, 235, 1)',
                                             borderWidth: 1
@@ -1235,7 +1235,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                                         {
                                             label: 'Sales',
-                                            data: monthsData,
+                                            data: monthsCount,
                                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                             borderColor: 'rgba(54, 162, 235, 1)',
                                             borderWidth: 1
@@ -1252,7 +1252,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                                         {
                                             label: 'Sales',
-                                            data: monthsData,
+                                            data: monthsCount,
                                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                             borderColor: 'rgba(54, 162, 235, 1)',
                                             borderWidth: 1
@@ -1269,7 +1269,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                                         {
                                             label: 'Sales',
-                                            data: monthsData,
+                                            data: monthsCount,
                                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                             borderColor: 'rgba(54, 162, 235, 1)',
                                             borderWidth: 1
@@ -1286,7 +1286,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                                         {
                                             label: 'Sales',
-                                            data: monthsData,
+                                            data: monthsCount,
                                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                             borderColor: 'rgba(54, 162, 235, 1)',
                                             borderWidth: 1
@@ -1303,7 +1303,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                                         {
                                             label: 'Sales',
-                                            data: monthsData,
+                                            data: monthsCount,
                                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                             borderColor: 'rgba(54, 162, 235, 1)',
                                             borderWidth: 1
@@ -1320,7 +1320,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                                         {
                                             label: 'Sales',
-                                            data: monthsData,
+                                            data: monthsCount,
                                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                             borderColor: 'rgba(54, 162, 235, 1)',
                                             borderWidth: 1
@@ -1337,7 +1337,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 
                                         {
                                             label: 'Sales',
-                                            data: monthsData,
+                                            data: monthsCount,
                                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                                             borderColor: 'rgba(54, 162, 235, 1)',
                                             borderWidth: 1
