@@ -1112,33 +1112,36 @@ document.addEventListener("DOMContentLoaded", async function () {
                 case 'monthly':
                     
 
-                    if (monthlyy.length > 1 ) {
-                        const monthsCount  = new Array(12).fill(0);
-                        monthlyy.forEach(i => {
-                            monthIndex = i.monthly - 1;
-                            monthsCount[monthIndex] = i.monthly_sales;
-                        })
-                            console.log(monthsCount);
-
-                            chartData = {
-                                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-                                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                                datasets: [
-            
-                                    {
-                                        label: 'Sales',
-                                        data: monthsCount,
-                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                        borderColor: 'rgba(54, 162, 235, 1)',
-                                        borderWidth: 1
-                                    }
-                                ]
-                            };
-                      
-                            
-                            
-                        
-                        console.log(chartData);
+                if (monthlyy.length > 1) {
+                    // Initialize an array of 12 zeros
+                    const monthsCount = new Array(12).fill(0);
+                
+                    // Populate monthsCount with sales data
+                    monthlyy.forEach(i => {
+                        const monthIndex = i.monthly - 1; // Convert to 0-based index
+                        monthsCount[monthIndex] = i.monthly_sales;
+                    });
+                
+                    console.log(monthsCount); // Output the resulting array
+                
+                    // Chart data
+                    const chartData = {
+                        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                        datasets: [
+                            {
+                                label: 'Sales',
+                                data: monthsCount,
+                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                borderWidth: 1
+                            }
+                        ]
+                    };
+                
+                    console.log(chartData); // Output chart data
+                
+                
                     } else {
                         monthlyy.forEach(i => {
                             if (i.monthly[0] == 1) {
