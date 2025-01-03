@@ -1141,7 +1141,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                         ]
                     };
                 
-                    } /*else {
+                    } else {
                         monthlyy.forEach(i => {
                             if (i.monthly[0] == 1) {
                                 const monthsCount  = new Array(12).fill(0);
@@ -1349,7 +1349,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 };
                             }
                         })
-                    }*/
+                    }
 
                     break;
                     case 'yearly':
