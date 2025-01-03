@@ -1031,6 +1031,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                             weeklyCount[weekIndex] = parseInt(e.weekly_sales);
                         })
 
+                        console.log(weeklyCount);
+
                         chartData = {
                             labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
                             datasets: [
