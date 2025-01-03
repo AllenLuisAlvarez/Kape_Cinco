@@ -17,7 +17,10 @@
 
     if ($res->num_rows > 0) {
         while ($row = $res->fetch_assoc()) {
-            $allData[] = $row['monthly_sales'];
+            $allData[] = [
+                'monthly' => $row['monthly'],
+                'monthly_sales' => $row['monthly_sales'],
+            ];
         }
     }
 
