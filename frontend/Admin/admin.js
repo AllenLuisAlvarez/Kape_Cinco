@@ -1113,10 +1113,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                     
 
                     if (monthlyy.length > 1 ) {
-                        
+                        const monthsCount  = new Array(12).fill(0);
                         monthlyy.forEach(i => {
-                          
-                            const monthsCount  = new Array(12).fill(0);
                             monthIndex = i.monthly - 1;
                             monthsCount[monthIndex] = i.monthly_sales;
                         })
