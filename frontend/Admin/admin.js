@@ -1120,6 +1120,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                             monthIndex = i.monthly - 1;
                             monthsCount[monthIndex] = i.monthly_sales;
 
+                            console.log(monthsCount);
+
                             chartData = {
                                 labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
