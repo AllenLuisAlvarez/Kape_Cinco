@@ -1041,7 +1041,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     } else {
                         weeklyy.forEach(item => {
                             numberOfweek = parseInt(item.weekly)
-                            weeks = Math.ceil(((numberOfweek - 1) / 4 + 1) / 4 + 1);
+                            weeks = ((numberOfweek - 1) / 4 + 1) / 4 + 1;
                             console.log(weeks);
                             console.log(numberOfweek);
     
