@@ -1211,6 +1211,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
                setTimeout(() => {
                 if (responseData.success) {
 
+                    console.log(orderType.value)
                     const receiptContent = `
 Kape Cinco
 -----------------------------
