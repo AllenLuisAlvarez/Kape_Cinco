@@ -797,15 +797,28 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         const orderType = document.querySelector('input[name="order_type"]:checked');
         const tableNum = document.getElementById('order_table_input');
-        const itemName = document.querySelector('.order-item-name');
-        const itemQuantity = document.querySelector('.order-item-quantity');
-        const itemPrice = document.querySelector('.order-item-price')
+        const orderItems = document.querySelectorAll('#order-details .order-detail-item');
         const orderDetails = JSON.parse(localStorage.getItem('ManualOrderDetails'));
         const pendingTotalAmountElement = document.querySelector('#modal-total-amount');
         const totalAmount = parseFloat(pendingTotalAmountElement.textContent.replace('₱', '').replace(',','').trim());
         const receivedAmount = parseFloat(document.getElementById('received-amount').value);
         const orderNum =  `ORD-${tableNum.value}-${Math.floor(Math.random() * 1000000)}`;
         const orderStats = 'Ongoing';
+        const orderItemDetails = [];
+
+        // Loop through each order item and extract the details
+        orderItems.forEach(item => {
+            const name = item.querySelector('.order-item-name').textContent;
+            const quantity = item.querySelector('.order-item-quantity').textContent;
+            const price = item.querySelector('.order-item-price').textContent;
+  
+    // Add the extracted details to the orderDetails array
+            orderItemDetails.push({
+                name: name,
+                quantity: quantity,
+                price: price
+            });
+        });
     
         if (!orderType) {
             alert('Please select Dine-In or Take-Out');
@@ -860,7 +873,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         Order Type: ${orderType.value}
 
         Items:
-        ${items}
+        ${orderItemDetails.name} ${orderItemDetails.quantity} ${orderItemDetails.price}
         
         -----------------------------
         Total:        ₱${(totalAmount).toFixed(2)}
