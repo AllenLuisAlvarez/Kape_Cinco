@@ -796,6 +796,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     confirmOrderButton.addEventListener('click', () => {
 
         const orderType = document.querySelector('input[name="order_type"]:checked');
+        const tableNum = document.getElementById('order_table_input');
+        const orderDetails = JSON.parse(localStorage.getItem('ManualOrderDetails'));
+        const pendingTotalAmountElement = document.querySelector('#modal-total-amount');
+        const totalAmount = parseFloat(pendingTotalAmountElement.textContent.replace('₱', '').replace(',','').trim());
+        const receivedAmount = parseFloat(document.getElementById('received-amount').value);
+        const orderNum =  `ORD-${tableNum.value}-${Math.floor(Math.random() * 1000000)}`;
+        const orderStats = 'Ongoing';
     
         if (!orderType) {
             alert('Please select Dine-In or Take-Out');
@@ -804,14 +811,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             console.log(orderType.value);
         }
 
-        const tableNum = document.getElementById('order_table_input');
-        const orderDetails = JSON.parse(localStorage.getItem('ManualOrderDetails'));
-        const pendingTotalAmountElement = document.querySelector('#modal-total-amount');
-        const totalAmount = parseFloat(pendingTotalAmountElement.textContent.replace('₱', '').replace(',','').trim());
-        const receivedAmount = document.getElementById('received-amount').value;
-        const orderNum =  `ORD-${tableNum.value}-${Math.floor(Math.random() * 1000000)}`;
-        const orderStats = 'Ongoing';
-
+        
         if (tableNum <= 0) {
             alert('Please Enter Correct Table Number');
             return; // Exit the function if no option is selected
