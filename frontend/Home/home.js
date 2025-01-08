@@ -797,6 +797,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         const orderType = document.querySelector('input[name="order_type"]:checked');
         const tableNum = document.getElementById('order_table_input');
+        const items = document.getElementById('order-details');
         const orderDetails = JSON.parse(localStorage.getItem('ManualOrderDetails'));
         const pendingTotalAmountElement = document.querySelector('#modal-total-amount');
         const totalAmount = parseFloat(pendingTotalAmountElement.textContent.replace('₱', '').replace(',','').trim());
@@ -808,7 +809,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             alert('Please select Dine-In or Take-Out');
             return; // Exit the function if no option is selected
         } else {
-            console.log(orderDetails);
+            console.log(items);
         }
 
         
@@ -858,12 +859,12 @@ document.addEventListener('DOMContentLoaded', async function () {
         Order Type: ${orderType.value}
 
         Items:
-        ${orderDetails}
+        ${items}
         
         -----------------------------
         Total:        ₱${(totalAmount).toFixed(2)}
         Received:     ₱${(receivedAmount).toFixed(2)}
-        Change:       ₱${(totalAmount - receivedAmount).toFixed(2)}
+        Change:       ₱${(receivedAmount - totalAmount).toFixed(2)}
         
         VATable:      ₱${(totalAmount - (totalAmount * (12/112))).toFixed(2)}
         VAT Tax:      ₱${(totalAmount * (12/112)).toFixed(2)}
