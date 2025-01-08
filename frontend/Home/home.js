@@ -1210,7 +1210,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
 
                 if (response.ok) {
                     const responseData = await response.json();
-               setTimeout(() => {
+               //setTimeout(() => {
                 if (responseData.success) {
 
                     //console.log(orderType.value)
@@ -1253,7 +1253,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
                 } else {
                     alert('Update failed!');
                 }
-               }, 500);
+              // }, 500);
                     
                 
                 } else {
