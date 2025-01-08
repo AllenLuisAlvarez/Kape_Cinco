@@ -1199,7 +1199,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
             formData.append('order-number', orderNumber);
             formData.append('received-amount',receivedAmount);
             formData.append('order-stats',orderStatus);
-        
+            setTimeout(() => {
             try {
                 const response = await fetch('/backend/Home/update_status.php', {
                     method: 'POST',
@@ -1248,13 +1248,16 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
                     } else {
                         alert('Update failed!');
                     }
+                
                 } else {
                     alert('Update request failed!');
                 }
+            
             } catch (error) {
                 console.error('Error updating item:', error);
                 alert('An error occurred during the update.');
             }
+        },500);
         }
         
     });
