@@ -812,8 +812,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         const orderNum =  `ORD-${tableNum.value}-${Math.floor(Math.random() * 1000000)}`;
         const orderStats = 'Ongoing';
 
-        if (!tableNum) {
-            alert('Please Enter Table Number');
+        if (tableNum <= 0) {
+            alert('Please Enter Correct Table Number');
             return; // Exit the function if no option is selected
         }
 
