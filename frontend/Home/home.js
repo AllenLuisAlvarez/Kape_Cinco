@@ -797,7 +797,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         const orderType = document.querySelector('input[name="order_type"]:checked');
         const tableNum = document.getElementById('order_table_input');
-        const items = document.querySelector('#order-details');
+        const itemName = document.querySelector('.order-item-name');
+        const itemQuantity = document.querySelector('.order-item-quantity');
+        const itemPrice = document.querySelector('.order-item-price')
         const orderDetails = JSON.parse(localStorage.getItem('ManualOrderDetails'));
         const pendingTotalAmountElement = document.querySelector('#modal-total-amount');
         const totalAmount = parseFloat(pendingTotalAmountElement.textContent.replace('₱', '').replace(',','').trim());
@@ -809,7 +811,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             alert('Please select Dine-In or Take-Out');
             return; // Exit the function if no option is selected
         } else {
-            console.log(items);
+            console.log(itemName.value, itemQuantity.value, itemPrice.value);
         }
 
         
