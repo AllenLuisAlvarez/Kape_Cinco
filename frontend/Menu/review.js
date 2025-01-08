@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('total-amount', totalPrice);
         formData.append('received-amount', receivedAmount);
         formData.append('order-stats', orderStats);
-        formData.append('order-type', orderType);
+        formData.append('order-type', orderType.value);
         formData.append('order-details', JSON.stringify(cart));
 
         fetch('/backend/Home/confirm_order.php', {
