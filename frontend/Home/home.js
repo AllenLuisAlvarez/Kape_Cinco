@@ -858,23 +858,23 @@ document.addEventListener('DOMContentLoaded', async function () {
                             console.log(orderItemDetails);
         
                             const receiptContent = `
-                                Kape Cinco
-                                -----------------------------
-                                Order Number: ${orderNum}
-                                Date: ${new Date().toLocaleDateString()}
+Kape Cinco
+-----------------------------
+Order Number: ${orderNum}
+Date: ${new Date().toLocaleDateString()}
                                 
-                                Order Type: ${orderType.value}
+Order Type: ${orderType.value}
         
-                                Items:
-                                ${orderItemDetails.map(item => `${item.name} ${item.quantity} ${item.price}`).join('\n')}
+Items:
+${orderItemDetails.map(item => `${item.name} ${item.quantity} ${item.price}`).join('\n')}
                                 
-                                -----------------------------
-                                Total:        ₱${totalAmount.toFixed(2)}
-                                Received:     ₱${receivedAmount.toFixed(2)}
-                                Change:       ₱${(receivedAmount - totalAmount).toFixed(2)}
+-----------------------------
+Total:        ₱${totalAmount.toFixed(2)}
+Received:     ₱${receivedAmount.toFixed(2)}
+Change:       ₱${(receivedAmount - totalAmount).toFixed(2)}
                                 
-                                VATable:      ₱${(totalAmount - (totalAmount * (12 / 112))).toFixed(2)}
-                                VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
+VATable:      ₱${(totalAmount - (totalAmount * (12 / 112))).toFixed(2)}
+VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
                             `;
         
                             // Create a Blob for the text file
