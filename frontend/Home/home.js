@@ -824,7 +824,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             alert('Please select Dine-In or Take-Out');
             return; // Exit the function if no option is selected
         } else {
-            console.log(orderItemDetails);
+            //console.log(orderItemDetails);
         }
 
         
@@ -858,6 +858,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                     fetchAndRenderOngoingOrder();
                     paymentModal.style.display = 'none';
                     billsSection.style.display = 'none';
+
+                    console.log(orderItemDetails);
 
                     const receiptContent = `
         Kape Cinco
