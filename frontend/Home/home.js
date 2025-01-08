@@ -855,18 +855,18 @@ document.addEventListener('DOMContentLoaded', async function () {
         Order Number: ${orderNum}
         Date: ${new Date().toLocaleDateString()}
         
-        Order Type: ${orderType}
+        Order Type: ${orderType.value}
 
         Items:
         ${orderDetails}
         
         -----------------------------
-        Total:        ₱${totalAmount}
-        Received:     ₱${receivedAmount}
-        Change:       ₱${totalAmount - receivedAmount}
+        Total:        ₱${(totalAmount).toFixed(2)}
+        Received:     ₱${(receivedAmount).toFixed(2)}
+        Change:       ₱${(totalAmount - receivedAmount).toFixed(2)}
         
-        VATable:      ₱${totalAmount - (totalAmount * (12/112))}
-        VAT Tax:      ₱${totalAmount * (12/112)}
+        VATable:      ₱${(totalAmount - (totalAmount * (12/112))).toFixed(2)}
+        VAT Tax:      ₱${(totalAmount * (12/112)).toFixed(2)}
 
       `;
 
