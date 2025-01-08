@@ -853,11 +853,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             .then(response => response.json()) 
             .then(data => {
                 if (data.message) {
-                    alert('Order Confirmed');
-                    clearAmountFields ()
-                    fetchAndRenderOngoingOrder();
-                    paymentModal.style.display = 'none';
-                    billsSection.style.display = 'none';
+                    
 
                     console.log(orderItemDetails);
 
@@ -890,6 +886,12 @@ document.addEventListener('DOMContentLoaded', async function () {
       link.href = URL.createObjectURL(blob);
       link.download = `receipt_table_${orderNum}.txt`;
       link.click();
+      
+                    alert('Order Confirmed');
+                    clearAmountFields ()
+                    fetchAndRenderOngoingOrder();
+                    paymentModal.style.display = 'none';
+                    billsSection.style.display = 'none';
                 } else if (data.error) {
                     alert(data.error);
                 }
