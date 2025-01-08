@@ -800,8 +800,10 @@ document.addEventListener('DOMContentLoaded', async function () {
         if (!orderType) {
             alert('Please select Dine-In or Take-Out');
             return; // Exit the function if no option is selected
+        } else {
+            console.log(orderType);
         }
-        
+
         const tableNum = document.getElementById('order_table_input');
         const orderDetails = JSON.parse(localStorage.getItem('ManualOrderDetails'));
         const pendingTotalAmountElement = document.querySelector('#modal-total-amount');
@@ -814,6 +816,8 @@ document.addEventListener('DOMContentLoaded', async function () {
             alert('Please Enter Table Number');
             return; // Exit the function if no option is selected
         }
+
+        
 
         if (isNaN(receivedAmount) || receivedAmount <= 0 || receivedAmount < totalAmount) {
             alert('Please enter a valid amount');

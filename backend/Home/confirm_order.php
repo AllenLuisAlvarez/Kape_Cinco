@@ -8,9 +8,9 @@
         $orderDate =  date('Y-m-d H:i:s');
         $orderTotalAmount = $_POST['total-amount'];
         $orderAmountReceived = $_POST['received-amount'];
-        $orderType = $_POST['order-type'];
         $orderStatus = $_POST['order-stats'];
-        
+        $orderType = $_POST['order-type'];
+
         if ($orderStatus === ''){
             $orderStatus = 'Pending';
         }
