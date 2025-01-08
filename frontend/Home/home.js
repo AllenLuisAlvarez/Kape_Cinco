@@ -1174,7 +1174,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
         const receivedAmountInput = document.getElementById('pending-received-amount');
         const receivedAmount = parseFloat(receivedAmountInput.value);
         const pendingItems = document.querySelectorAll('#pending-order-details .order-item');
-        const orderType = document.querySelector('pending-order-type').textContent;
+        const orderType = document.getElementById('pending-order-type').textContent;
         const pendingOrderItems = [];
 
         pendingItems.forEach((item) => {
@@ -1213,14 +1213,14 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
                //setTimeout(() => {
                 if (responseData.success) {
 
-                    console.log(orderType.value)
+                    console.log(orderType)
                     const receiptContent = `
 Kape Cinco
 -----------------------------
 Order Number: ${orderNumber}
 Date: ${new Date().toLocaleDateString()}
                             
-Order Type: ${orderType.value}
+Order Type: ${orderType}
 Table Number: ${orderNumber.split('-')[1]}
     
 Items:
