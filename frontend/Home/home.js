@@ -801,7 +801,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             alert('Please select Dine-In or Take-Out');
             return; // Exit the function if no option is selected
         } else {
-            console.log(orderType);
+            console.log(orderType.value);
         }
 
         const tableNum = document.getElementById('order_table_input');
@@ -827,7 +827,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             formData.append('total-amount', orderDetails.totalPrice);
             formData.append('received-amount', receivedAmount);
             formData.append('order-stats', orderStats);
-            formData.append('order-type', orderType);
+            formData.append('order-type', orderType.value);
             formData.append('order-details', JSON.stringify(orderDetails.cart));
 
             fetch('/backend/Home/confirm_order.php', {
