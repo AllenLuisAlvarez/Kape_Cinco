@@ -52,6 +52,13 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
 
     document.querySelector('.complete-order-btn').addEventListener('click', function() {
+        const orderType = document.querySelector('input[name="order_type"]:checked');
+    
+        if (!orderType) {
+            alert('Please select Dine-In or Take-Out');
+            return; // Exit the function if no option is selected
+        }
+
         const orderNumber = generateOrderNumber(); 
         const orderToken = generateOrderToken();
         const receivedAmount = 0;
@@ -66,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('total-amount', totalPrice);
         formData.append('received-amount', receivedAmount);
         formData.append('order-stats', orderStats);
+        formData.append('order-type', orderType);
         formData.append('order-details', JSON.stringify(cart));
 
         fetch('/backend/Home/confirm_order.php', {

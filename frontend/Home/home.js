@@ -794,6 +794,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     
     // Event listener for the Confirm Order button in the modal
     confirmOrderButton.addEventListener('click', () => {
+
+        const orderType = document.querySelector('input[name="order_type"]:checked');
+    
+        if (!orderType) {
+            alert('Please select Dine-In or Take-Out');
+            return; // Exit the function if no option is selected
+        }
+        
         const tableNum = document.getElementById('order_table_input');
         const orderDetails = JSON.parse(localStorage.getItem('ManualOrderDetails'));
         const pendingTotalAmountElement = document.querySelector('#modal-total-amount');
@@ -801,6 +809,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         const receivedAmount = document.getElementById('received-amount').value;
         const orderNum =  `ORD-${tableNum.value}-${Math.floor(Math.random() * 1000000)}`;
         const orderStats = 'Ongoing';
+
+        if (!tableNum) {
+            alert('Please Enter Table Number');
+            return; // Exit the function if no option is selected
+        }
 
         if (isNaN(receivedAmount) || receivedAmount <= 0 || receivedAmount < totalAmount) {
             alert('Please enter a valid amount');
@@ -810,6 +823,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             formData.append('total-amount', orderDetails.totalPrice);
             formData.append('received-amount', receivedAmount);
             formData.append('order-stats', orderStats);
+            formData.append('order-type', orderType);
             formData.append('order-details', JSON.stringify(orderDetails.cart));
 
             fetch('/backend/Home/confirm_order.php', {
@@ -829,6 +843,37 @@ document.addEventListener('DOMContentLoaded', async function () {
                 }
             })
             .catch(error => console.error('Error:', error));
+
+            const receiptContent = `
+        Kape Cinco
+        TIN: N/A
+        -----------------------------
+        Order Number: ${orderNum}
+        Date: ${new Date().toLocaleDateString()}
+        
+        Order Type: ${orderType}
+
+        Items:
+        ${orderDetails}
+        
+        -----------------------------
+        Total:        ₱${totalAmount}
+        Received:     ₱${receivedAmount}
+        Change:       ₱${totalAmount - receivedAmount}
+        
+        VATable:      ₱${totalAmount - (totalAmount * (12/112))}
+        VAT Tax:      ₱${totalAmount * (12/112)}
+
+      `;
+
+      // Create a Blob for the text file
+      const blob = new Blob([receiptContent], { type: "text/plain" });
+
+      // Trigger file download
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `receipt_table_${orderNum}.txt`;
+      link.click();
 
             clearCart();
         }
