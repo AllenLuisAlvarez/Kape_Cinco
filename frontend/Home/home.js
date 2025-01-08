@@ -1190,7 +1190,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
             });
         });
 
-        console.log(orderType.value)
+        
 
         if (isNaN(receivedAmount) || receivedAmount <= 0 || receivedAmount < totalAmount) {
             alert('Please enter a valid amount');
@@ -1213,7 +1213,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
                setTimeout(() => {
                 if (responseData.success) {
 
-                    
+                    console.log(orderType.value)
                     const receiptContent = `
 Kape Cinco
 -----------------------------
