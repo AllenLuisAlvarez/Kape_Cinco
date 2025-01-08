@@ -20,7 +20,7 @@
         $orderDetails = json_decode($orderDetailsRaw, true);
 
         $sql1 = "INSERT INTO order_number_table (order_number, order_date, order_total_amount, order_payment_received, order_status, order_type)
-                 VALUES (?, ?, ?, ?, ?)";
+                 VALUES (?, ?, ?, ?, ?, ?)";
         $stmt1 = $conn->prepare($sql1);
         $stmt1->bind_param("ssddss", $orderNumber, $orderDate, $orderTotalAmount, $orderAmountReceived, $orderStatus, $orderType);
         if ($stmt1->execute()) {
