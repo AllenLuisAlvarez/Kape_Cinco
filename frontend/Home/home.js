@@ -797,7 +797,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         const orderType = document.querySelector('input[name="order_type"]:checked');
         const tableNum = document.getElementById('order_table_input');
-        const items = document.getElementById('order-details');
+        const items = document.querySelector('#order-details');
         const orderDetails = JSON.parse(localStorage.getItem('ManualOrderDetails'));
         const pendingTotalAmountElement = document.querySelector('#modal-total-amount');
         const totalAmount = parseFloat(pendingTotalAmountElement.textContent.replace('₱', '').replace(',','').trim());
@@ -809,7 +809,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             alert('Please select Dine-In or Take-Out');
             return; // Exit the function if no option is selected
         } else {
-            console.log(items.value);
+            console.log(items);
         }
 
         
@@ -851,7 +851,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 
             const receiptContent = `
         Kape Cinco
-        TIN: N/A
         -----------------------------
         Order Number: ${orderNum}
         Date: ${new Date().toLocaleDateString()}
