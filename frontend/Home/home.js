@@ -795,13 +795,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Event listener for the Confirm Order button in the modal
     confirmOrderButton.addEventListener('click', () => {
 
-        const orderType = document.querySelector('input[name="order_type"]:checked').value;
+        const orderType = document.querySelector('input[name="order_type"]:checked');
     
         if (!orderType) {
             alert('Please select Dine-In or Take-Out');
             return; // Exit the function if no option is selected
         } else {
-            console.log(orderType);
+            console.log(orderType.value);
         }
 
         const tableNum = document.getElementById('order_table_input');
@@ -861,7 +861,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         ${orderDetails}
         
         -----------------------------
-        Total:        ₱${(totalAmount).toFixed(2)}
+        Total:        ₱${totalAmount}
         Received:     ₱${(receivedAmount).toFixed(2)}
         Change:       ₱${(totalAmount - receivedAmount).toFixed(2)}
         
