@@ -927,6 +927,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
         //console.log(orders);
         const pendingOrdersContainer = document.getElementById('pending-orders');
         const pendingOrderNumber = document.getElementById('pending-order-number');
+        const pendingOrderType = document.getElementById('pending-order-type');
         const pendingOrderDetails = document.getElementById('pending-order-details');
         const modalTotalAmount = document.getElementById('pending-modal-total-amount');
         const modal = document.getElementById('pending-orders-modal');
@@ -975,6 +976,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
 
             orderItem.addEventListener('click', function() {
                 pendingOrderNumber.textContent = order.order_number;
+                pendingOrderType.textContent = order.order_type;
                 pendingOrderDetails.innerHTML = order.cart.map(item => `
                     <div class="order-item">
                         <span class="food-name">${item.item_name}</span>
@@ -1171,6 +1173,21 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
         const totalAmount = parseFloat(pendingTotalAmountElement.textContent.replace('₱', '').trim());
         const receivedAmountInput = document.getElementById('pending-received-amount');
         const receivedAmount = parseFloat(receivedAmountInput.value);
+        const pendingItems = document.querySelectorAll('#pending-order-details .order-item');
+        const pendingOrderItems = [];
+
+        pendingItems.forEach((item) => {
+            const name = item.querySelector('.food-name').textContent;
+            const quantity = item.querySelector('.quantity').textContent;
+            const price = item.querySelector('.total').textContent;
+  
+    // Add the extracted details to the orderDetails array
+            orderItemDetails.push({
+                name: name,
+                quantity: quantity,
+                price: price
+            });
+        });
 
         if (isNaN(receivedAmount) || receivedAmount <= 0 || receivedAmount < totalAmount) {
             alert('Please enter a valid amount');
@@ -1191,6 +1208,37 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
                 if (response.ok) {
                     const responseData = await response.json();
                     if (responseData.success) {
+
+                        const receiptContent = `
+Kape Cinco
+-----------------------------
+Order Number: ${orderNumber}
+Date: ${new Date().toLocaleDateString()}
+                                
+Order Type: ${orderType.value}
+Table Number: ${tableNum.value}
+        
+Items:
+${pendingOrderItems.map(item => `${item.name} ${item.quantity} ${item.price}`).join('\n')}
+                                
+-----------------------------
+Total:        ₱${totalAmount.toFixed(2)}
+Received:     ₱${receivedAmount.toFixed(2)}
+Change:       ₱${(receivedAmount - totalAmount).toFixed(2)}
+                                
+VATable:      ₱${(totalAmount - (totalAmount * (12 / 112))).toFixed(2)}
+VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
+                            `;
+        
+                            // Create a Blob for the text file
+                            const blob = new Blob([receiptContent], { type: "text/plain" });
+        
+                            // Trigger file download
+                            const link = document.createElement("a");
+                            link.href = URL.createObjectURL(blob);
+                            link.download = `receipt_table_${orderNum}.txt`;
+                            link.click();
+
                         alert("Pending Order Confirmed");
                         fetchAndRenderOngoingOrder();
                         fetchAndRenderPendingOrder();
