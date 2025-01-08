@@ -863,7 +863,7 @@ Order Number: ${orderNum}
 Date: ${new Date().toLocaleDateString()}
                                 
 Order Type: ${orderType.value}
-Table Number: ${tableNum}
+Table Number: ${tableNum.value}
         
 Items:
 ${orderItemDetails.map(item => `${item.name} ${item.quantity} ${item.price}`).join('\n')}
