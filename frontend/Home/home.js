@@ -846,61 +846,66 @@ document.addEventListener('DOMContentLoaded', async function () {
             formData.append('order-type', orderType.value);
             formData.append('order-details', JSON.stringify(orderDetails.cart));
 
-            fetch('/backend/Home/confirm_order.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json()) 
-            .then(data => {
-                if (data.message) {
-                    
-
-                    console.log(orderItemDetails);
-
-                    const receiptContent = `
-        Kape Cinco
-        -----------------------------
-        Order Number: ${orderNum}
-        Date: ${new Date().toLocaleDateString()}
-        
-        Order Type: ${orderType.value}
-
-        Items:
-        ${orderItemDetails.name} ${orderItemDetails.quantity} ${orderItemDetails.price}
-        
-        -----------------------------
-        Total:        ₱${(totalAmount).toFixed(2)}
-        Received:     ₱${(receivedAmount).toFixed(2)}
-        Change:       ₱${(receivedAmount - totalAmount).toFixed(2)}
-        
-        VATable:      ₱${(totalAmount - (totalAmount * (12/112))).toFixed(2)}
-        VAT Tax:      ₱${(totalAmount * (12/112)).toFixed(2)}
-
-      `;
-
-      // Create a Blob for the text file
-      const blob = new Blob([receiptContent], { type: "text/plain" });
-
-      // Trigger file download
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = `receipt_table_${orderNum}.txt`;
-      link.click();
-      
-                    alert('Order Confirmed');
-                    clearAmountFields ()
-                    fetchAndRenderOngoingOrder();
-                    paymentModal.style.display = 'none';
-                    billsSection.style.display = 'none';
-                } else if (data.error) {
-                    alert(data.error);
-                }
-            })
-            .catch(error => console.error('Error:', error));
-
+            if (orderItemDetails.length > 0) {
+                fetch('/backend/Home/confirm_order.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json()) 
+                .then(data => {
+                    if (data.message) {
+                        
+    
+                        console.log(orderItemDetails);
+    
+                        const receiptContent = `
+                                Kape Cinco
+                                -----------------------------
+                                Order Number: ${orderNum}
+                                Date: ${new Date().toLocaleDateString()}
             
+                                Order Type: ${orderType.value}
+    
+                                Items:
+                                ${orderItemDetails.name} ${orderItemDetails.quantity} ${orderItemDetails.price}
+            
+                                -----------------------------
+                                Total:        ₱${(totalAmount).toFixed(2)}
+                                Received:     ₱${(receivedAmount).toFixed(2)}
+                                Change:       ₱${(receivedAmount - totalAmount).toFixed(2)}
+            
+                                VATable:      ₱${(totalAmount - (totalAmount * (12/112))).toFixed(2)}
+                                VAT Tax:      ₱${(totalAmount * (12/112)).toFixed(2)}
+    
+                            `;
+    
+                        // Create a Blob for the text file
+                        const blob = new Blob([receiptContent], { type: "text/plain" });
+    
+                        // Trigger file download
+                        const link = document.createElement("a");
+                        link.href = URL.createObjectURL(blob);
+                        link.download = `receipt_table_${orderNum}.txt`;
+                        link.click();
+    
+                        alert('Order Confirmed');
+                        clearAmountFields ()
+                        fetchAndRenderOngoingOrder();
+                        paymentModal.style.display = 'none';
+                        billsSection.style.display = 'none';
+                    } else if (data.error) {
+                        alert(data.error);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+    
+                
+    
+                clearCart();
+            } else {
+                alert('No Item Selected');
+            }
 
-            clearCart();
         }
     });
 
