@@ -1237,7 +1237,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
                             // Trigger file download
                             const link = document.createElement("a");
                             link.href = URL.createObjectURL(blob);
-                            link.download = `receipt_table_${orderNum}.txt`;
+                            link.download = `receipt_table_${orderNumber}.txt`;
                             link.click();
 
                         alert("Pending Order Confirmed");
