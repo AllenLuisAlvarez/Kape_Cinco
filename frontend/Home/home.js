@@ -824,7 +824,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             alert('Please select Dine-In or Take-Out');
             return; // Exit the function if no option is selected
         } else {
-            console.log(orderItemDetails.name, orderItemDetails.quantity, orderItemDetails.price);
+            console.log(orderItemDetails);
         }
 
         
