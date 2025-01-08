@@ -1183,7 +1183,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
             const price = item.querySelector('.total').textContent;
   
     // Add the extracted details to the orderDetails array
-            orderItemDetails.push({
+        pendingOrderItems.push({
                 name: name,
                 quantity: quantity,
                 price: price
@@ -1217,7 +1217,7 @@ Order Number: ${orderNumber}
 Date: ${new Date().toLocaleDateString()}
                                 
 Order Type: ${orderType.value}
-Table Number: ${tableNum.value}
+Table Number: ${orderNumber.split('-')[1]}
         
 Items:
 ${pendingOrderItems.map(item => `${item.name} ${item.quantity} ${item.price}`).join('\n')}
