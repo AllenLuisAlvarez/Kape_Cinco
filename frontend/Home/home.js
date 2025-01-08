@@ -888,7 +888,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                         link.download = `receipt_table_${orderNum}.txt`;
                         link.click();
     
-                        alert('Order Confirmed');
+                        //alert('Order Confirmed');
                         clearAmountFields ()
                         paymentModal.style.display = 'none';
                         billsSection.style.display = 'none';
