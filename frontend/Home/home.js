@@ -997,6 +997,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
 
         const ongoingOrdersContainer = document.getElementById('ongoing-orders');
         const ongoingOrderNumber = document.getElementById('ongoing-order-number');
+        const ongoingOrderType = document.getElementById('ongoing-order-type');
         const ongoingOrderDetails = document.getElementById('ongoing-order-details');
         const modalTotalAmount = document.getElementById('ongoing-modal-total-amount');
         const modalTotalReceived = document.getElementById('ongoing-modal-received-amount');
@@ -1017,6 +1018,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
 
             orderItem.addEventListener('click', function () {
                 ongoingOrderNumber.textContent = order.order_number;
+                ongoingOrderType.textContent = order.order_type;
                 ongoingOrderDetails.innerHTML = order.cart.map(item => `
                     <div class="order-item">
                         <span class="food-name">${item.item_name}</span>
@@ -1037,6 +1039,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
 
         const completedOrdersContainer = document.getElementById('completed-orders');
         const completedOrderNumber = document.getElementById('completed-order-number');
+        const completedOrderType = document.getElementById('completed-order-type');
         const completedOrderDetails = document.getElementById('completed-order-details');
         const modalTotalAmount = document.getElementById('completed-modal-total-amount');
         const modalTotalReceived = document.getElementById('completed-modal-received-amount');
@@ -1056,6 +1059,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
 
             orderItem.addEventListener('click', function () {
                 completedOrderNumber.textContent = order.order_number;
+                completedOrderType.textContent = order.order_type;
                 completedOrderDetails.innerHTML = order.cart.map(item => `
                     <div class="order-item">
                         <span class="food-name">${item.item_name}</span>
