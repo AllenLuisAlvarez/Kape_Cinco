@@ -794,7 +794,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     
     // Event listener for the Confirm Order button in the modal
     confirmOrderButton.addEventListener('click', () => {
-        fetchAndRenderOngoingOrder();
+        //fetchAndRenderOngoingOrder();
         const orderType = document.querySelector('input[name="order_type"]:checked');
         const tableNum = document.getElementById('order_table_input');
         const orderItems = document.querySelectorAll('#order-details .order-detail-item');
