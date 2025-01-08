@@ -1199,7 +1199,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
             formData.append('order-number', orderNumber);
             formData.append('received-amount',receivedAmount);
             formData.append('order-stats',orderStatus);
-            setTimeout(() => {
+            
             try {
                 const response = await fetch('/backend/Home/update_status.php', {
                     method: 'POST',
@@ -1208,46 +1208,50 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
 
                 if (response.ok) {
                     const responseData = await response.json();
-                    if (responseData.success) {
+               setTimeout(() => {
+                if (responseData.success) {
 
-                        const receiptContent = `
+                    const receiptContent = `
 Kape Cinco
 -----------------------------
 Order Number: ${orderNumber}
 Date: ${new Date().toLocaleDateString()}
-                                
+                            
 Order Type: ${orderType.value}
 Table Number: ${orderNumber.split('-')[1]}
-        
+    
 Items:
 ${pendingOrderItems.map(item => `${item.name} ${item.quantity} ${item.price}`).join('\n')}
-                                
+                            
 -----------------------------
 Total:        ₱${totalAmount.toFixed(2)}
 Received:     ₱${receivedAmount.toFixed(2)}
 Change:       ₱${(receivedAmount - totalAmount).toFixed(2)}
-                                
+                            
 VATable:      ₱${(totalAmount - (totalAmount * (12 / 112))).toFixed(2)}
 VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
-                            `;
-        
-                            // Create a Blob for the text file
-                            const blob = new Blob([receiptContent], { type: "text/plain" });
-        
-                            // Trigger file download
-                            const link = document.createElement("a");
-                            link.href = URL.createObjectURL(blob);
-                            link.download = `receipt_table_${orderNumber}.txt`;
-                            link.click();
+                        `;
+    
+                        // Create a Blob for the text file
+                        const blob = new Blob([receiptContent], { type: "text/plain" });
+    
+                        // Trigger file download
+                        const link = document.createElement("a");
+                        link.href = URL.createObjectURL(blob);
+                        link.download = `receipt_table_${orderNumber}.txt`;
+                        link.click();
 
-                        alert("Pending Order Confirmed");
-                        fetchAndRenderOngoingOrder();
-                        fetchAndRenderPendingOrder();
-                        clearPendingAmountFields();
-                        document.getElementById('pending-orders-modal').style.display = 'none';
-                    } else {
-                        alert('Update failed!');
-                    }
+                    alert("Pending Order Confirmed");
+                    fetchAndRenderOngoingOrder();
+                    fetchAndRenderPendingOrder();
+                    clearPendingAmountFields();
+                    document.getElementById('pending-orders-modal').style.display = 'none';
+                    
+                } else {
+                    alert('Update failed!');
+                }
+               }, 500);
+                    
                 
                 } else {
                     alert('Update request failed!');
@@ -1257,7 +1261,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
                 console.error('Error updating item:', error);
                 alert('An error occurred during the update.');
             }
-        },500);
+        
         }
         
     });
