@@ -797,7 +797,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         const orderType = document.querySelector('input[name="order_type"]:checked');
         const tableNum = document.getElementById('order_table_input');
-        const items = document.getElementById('order-details');
+        const items = document.querySelector('#order-details');
         const orderDetails = JSON.parse(localStorage.getItem('ManualOrderDetails'));
         const pendingTotalAmountElement = document.querySelector('#modal-total-amount');
         const totalAmount = parseFloat(pendingTotalAmountElement.textContent.replace('₱', '').replace(',','').trim());
