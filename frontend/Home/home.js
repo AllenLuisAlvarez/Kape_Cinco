@@ -1174,7 +1174,7 @@ VAT Tax:      ₱${(totalAmount * (12 / 112)).toFixed(2)}
         const receivedAmountInput = document.getElementById('pending-received-amount');
         const receivedAmount = parseFloat(receivedAmountInput.value);
         const pendingItems = document.querySelectorAll('#pending-order-details .order-item');
-        const orderType = document.querySelector('pending-order-type');
+        const orderType = document.querySelector('pending-order-type').textContent;
         const pendingOrderItems = [];
 
         pendingItems.forEach((item) => {
