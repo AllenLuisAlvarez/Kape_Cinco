@@ -861,9 +861,9 @@ document.addEventListener('DOMContentLoaded', async function () {
         ${orderDetails}
         
         -----------------------------
-        Total:        ₱${totalAmount}
-        Received:     ₱${receivedAmount}
-        Change:       ₱${totalAmount - receivedAmount}
+        Total:        ₱${(totalAmount).toFixed(2)}
+        Received:     ₱${(receivedAmount).toFixed(2)}
+        Change:       ₱${(totalAmount - receivedAmount).toFixed(2)}
         
         VATable:      ₱${(totalAmount - (totalAmount * (12/112))).toFixed(2)}
         VAT Tax:      ₱${(totalAmount * (12/112)).toFixed(2)}
