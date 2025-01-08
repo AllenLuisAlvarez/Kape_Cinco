@@ -855,7 +855,6 @@ document.addEventListener('DOMContentLoaded', async function () {
                     .then(response => response.json())
                     .then(data => {
                         if (data.message) {
-                            console.log(orderItemDetails);
         
                             const receiptContent = `
 Kape Cinco
